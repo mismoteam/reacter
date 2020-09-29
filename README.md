@@ -22,14 +22,14 @@ Use Reacter to easily kick off and architecture your Cloud-Powered React Apps.
 
 - https://reactrouter.com
 
-**A mocked JWT authentication** (\_backend communication).
+**A mocked JWT authentication response** (\_backend communication).
 
-- https://github.com/lognllc/reacter/src/_backend
+- https://github.com/lognllc/reacter/tree/master/src/_backend/utils
 
 ## Get the TS Starter
 
 ```
-git clone https://github.com/lognllc/reacter
+git clone https://github.com/lognllc/reacter.git
 
 cd reacter
 
