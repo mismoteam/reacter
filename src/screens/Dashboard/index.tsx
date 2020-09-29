@@ -1,13 +1,14 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import { useRecoilValue } from "recoil";
 
 import { Background } from "components";
-import { useRecoilValue } from "recoil";
 import { userAtom } from "state";
 
 const Dashboard = () => {
-  const value = useRecoilValue(userAtom);
+  const { firstName, lastName, email } = useRecoilValue(userAtom);
+
   return (
     <Background variation={"light"}>
       <Grid container direction="column" alignContent="center">
@@ -19,7 +20,36 @@ const Dashboard = () => {
             gutterBottom
           >
             Work in Progress
-            {JSON.stringify(value)}
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography
+            variant="subtitle1"
+            display="block"
+            align="center"
+            gutterBottom
+          >
+            {firstName}
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography
+            variant="subtitle1"
+            display="block"
+            align="center"
+            gutterBottom
+          >
+            {lastName}
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography
+            variant="subtitle1"
+            display="block"
+            align="center"
+            gutterBottom
+          >
+            {email}
           </Typography>
         </Grid>
         <Grid item xs={12}>

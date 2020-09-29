@@ -12,7 +12,14 @@ import userAtom from "./state/user/atoms";
 const history = createBrowserHistory();
 
 const App: FC = () => {
-  const value = useRecoilValue(userAtom);
+  /**
+   * Because Recoil doesn't see the atoms if it is not in app tree.
+   * And we are using lazy loading for each module so user atom.
+   *
+   * Please put all your `statePersist` atoms here:
+   */
+  useRecoilValue(userAtom);
+
   return (
     <>
       <CssBaseline />

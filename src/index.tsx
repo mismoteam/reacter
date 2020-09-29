@@ -16,7 +16,7 @@ import configureFakeBackendUtil from "./_backend/utils/configure.fake.backend.js
 configureFakeBackendUtil();
 
 const { RecoilPersist, updateState } = recoilPersist(
-  statePersist.atomsToMantain,
+  statePersist.atomsToPersist,
   {
     key: statePersist.key,
     storage: localStorage,
