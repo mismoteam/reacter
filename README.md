@@ -1,6 +1,6 @@
 ## Reacter
 
-Use Reacter to easily kick off and architecture your React Apps.
+Use Reacter to easily kick off and architecture your Cloud-Powered React Apps.
 
 ![Reacter](./reacter.gif "Reacter")
 
@@ -22,7 +22,7 @@ Use Reacter to easily kick off and architecture your React Apps.
 
 - https://reactrouter.com
 
-**A mocked JWT authentication** (\_backend communication)
+**A mocked JWT authentication** (\_backend communication).
 
 - https://github.com/lognllc/reacter/src/_backend
 
@@ -50,21 +50,25 @@ admin
 
 - Ask for feedback.
 
+- Add a Recoil logger or debugger tool.
+
 - Add Initial App Theme.
 
 - Create 2 Dashboard Screens with a simple:
 
   - Restful API request (SWR).
 
-  - GraqphQL API request (Apollo Client).
+  - GraphQL API request (Apollo Client).
 
     - Subscriptions example (optional).
 
-- Implment Lazy Load - Suspense intregration for evey Dashboard Screen.
+- Implement Lazy Load - Suspense intregration for every Dashboard Screen.
 
 - Go for the TDD approach using RTL + Jest ;)
 
 - Plan and write 2 to 3 blog articles.
+
+- Refactor.
 
 ## CRA
 
