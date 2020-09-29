@@ -6,13 +6,19 @@ import { createBrowserHistory } from "history";
 // Route Components
 import Routes from "routes";
 
+import { useRecoilValue } from "recoil";
+import userAtom from "./state/user/atoms";
+
 const history = createBrowserHistory();
 
-const App: FC = () => (
-  <>
-    <CssBaseline />
-    <Routes history={history} />
-  </>
-);
+const App: FC = () => {
+  const value = useRecoilValue(userAtom);
+  return (
+    <>
+      <CssBaseline />
+      <Routes history={history} />
+    </>
+  );
+};
 
 export default memo(App);
