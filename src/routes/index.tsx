@@ -23,6 +23,11 @@ const routes = [
     component: lazy(() => import("screens/Dashboard")),
   },
   {
+    exact: true,
+    path: "/dashboard/graphql",
+    component: lazy(() => import("screens/Dashboard/GraphQL")),
+  },
+  {
     component: lazy(() => import("screens/ErrorPage")),
   },
 ];
