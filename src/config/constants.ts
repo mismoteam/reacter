@@ -7,7 +7,7 @@ export const STORAGE_KEY = process.env.REACT_APP_STORAGE_KEY;
 
 export const statePersist = {
   key: "appState",
-  atomsToPersist: ["user"],
+  atomsToPersist: ["loading", "user"],
 };
 
 if (process.env.NODE_ENV === "development") {

@@ -1,6 +1,6 @@
 import React, { memo, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { useHistory } from "react-router-dom";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
@@ -13,8 +13,9 @@ import { authenticationService } from "services";
 import { FormLoginInputs } from "./types";
 import { loginFormSchema } from "./validation";
 
+import StateLoading from "state/loading/types";
 import StateUser from "state/user/types";
-import userAtom from "state/user/atoms";
+import { loadingAtom, userAtom } from "state";
 
 import useStyles from "./style";
 
@@ -22,9 +23,12 @@ const Login = () => {
   const classes = useStyles();
   const history = useHistory();
   const [, setUserAtomState] = useRecoilState<StateUser>(userAtom);
+  const { isInProgress } = useRecoilValue(loadingAtom);
+
+  const [, setLoadingAtomState] = useRecoilState<StateLoading>(loadingAtom);
 
   const [formLoginError, setFormLoginError] = useState("");
-  const [formLoginIsSubmitting, setFormLoginIsSubmitting] = useState(false);
+  // const [formLoginIsSubmitting, setFormLoginIsSubmitting] = useState(false);
 
   const { control, errors, handleSubmit } = useForm<FormLoginInputs>({
     resolver: yupResolver(loginFormSchema),
@@ -32,17 +36,17 @@ const Login = () => {
 
   const onLoginFormSubmit = (data: any) => {
     setFormLoginError("");
-    setFormLoginIsSubmitting(true);
+    setLoadingAtomState({ isInProgress: true });
 
     authenticationService.login(data.email, data.password).then(
       (user: StateUser) => {
         setUserAtomState(user);
-        setFormLoginIsSubmitting(false);
+        setLoadingAtomState({ isInProgress: false });
         history.push("/dashboard");
       },
       (error: string) => {
         setFormLoginError(error);
-        setFormLoginIsSubmitting(false);
+        setLoadingAtomState({ isInProgress: false });
       }
     );
   };
@@ -87,7 +91,7 @@ const Login = () => {
                     defaultValue="admin@example.com"
                     control={control}
                     errors={errors}
-                    disabled={formLoginIsSubmitting}
+                    disabled={isInProgress}
                     fullWidth
                   />
                   <FormInput
@@ -99,7 +103,7 @@ const Login = () => {
                     defaultValue="admin"
                     control={control}
                     errors={errors}
-                    disabled={formLoginIsSubmitting}
+                    disabled={isInProgress}
                     fullWidth
                   />
                   <FormButton
@@ -107,8 +111,8 @@ const Login = () => {
                     color="primary"
                     value="Login"
                     type="submit"
-                    isSubmitting={formLoginIsSubmitting}
-                    disabled={formLoginIsSubmitting}
+                    isSubmitting={isInProgress}
+                    disabled={isInProgress}
                     fullWidth
                   />
                 </form>

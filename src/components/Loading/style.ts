@@ -1,23 +1,31 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const Style = makeStyles((theme) => ({
-  message: {
-    width: 280,
-  },
-  progress: {
+  root: {
+    zIndex: 5,
+    position: "absolute",
+    background: "rgba(255,255,255,0.8)",
+    flex: 1,
     display: "flex",
-    flexDirection: "column",
+    margin: 0,
+    padding: theme.spacing(3),
+    width: "100%",
+    maxWidth: "100%",
+    height: "100vh",
+    alignSelf: "center",
     alignItems: "center",
+    justifyContent: "center",
   },
-  header: {
-    backgroundColor: "#fafafa",
-    paddingBottom: 0,
+  progressContainer: {
+    width: 110,
+    height: 110,
+    borderRadius: "50%",
+    background: theme.palette.common.white,
+    border: "1px solid #F5F5F5",
+    paddingTop: theme.spacing(4),
+    paddingLeft: theme.spacing(4),
   },
-  title: {
-    marginTop: 0,
-    marginBottom: theme.spacing(2),
-    fontSize: theme.spacing(2),
-  },
+  progress: {},
 }));
 
 export default Style;

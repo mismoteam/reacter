@@ -1,16 +1,20 @@
 // @ts-nocheck
 import React, { FC, memo } from "react";
 import { ApolloProvider } from "@apollo/client";
+import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { createBrowserHistory } from "history";
 
 import { createClient } from "graphql/client";
+import { Loading } from "components";
 
 // Route Components
 import Routes from "routes";
 
 import { useRecoilValue } from "recoil";
-import userAtom from "./state/user/atoms";
+import { loadingAtom, userAtom } from "state";
+
+import theme from "config/theme";
 
 const client = createClient();
 const history = createBrowserHistory();
@@ -22,14 +26,18 @@ const App: FC = () => {
    *
    * Please put all your `statePersist` atoms here:
    */
+  const { isInProgress } = useRecoilValue(loadingAtom);
   useRecoilValue(userAtom);
 
   return (
     <>
       <CssBaseline />
-      <ApolloProvider client={client}>
-        <Routes history={history} />
-      </ApolloProvider>
+      <ThemeProvider theme={theme}>
+        <ApolloProvider client={client}>
+          <Loading isInProgress={isInProgress} />
+          <Routes history={history} />
+        </ApolloProvider>
+      </ThemeProvider>
     </>
   );
 };

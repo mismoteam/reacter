@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-import StateUser from "state/user/types";
+import StateUser from "./types";
 
 const ATOM_KEY = "user";
 
