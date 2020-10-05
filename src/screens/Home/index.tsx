@@ -11,7 +11,7 @@ const Home = () => {
   const classes = useStyles();
 
   return (
-    <Background variation={"light"}>
+    <Background variation={"light"} type="centered">
       <Grid container>
         <Grid item xs={12}>
           <Grid container direction="column" alignContent="center">

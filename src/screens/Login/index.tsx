@@ -50,7 +50,7 @@ const Login = () => {
   };
 
   return (
-    <Background variation={"light"}>
+    <Background variation={"light"} type="centered">
       <Grid container>
         <Grid item xs={12}>
           <Box className={classes.goBack}>

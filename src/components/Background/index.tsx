@@ -1,19 +1,23 @@
 import React, { FC, memo } from "react";
-import Container from "@material-ui/core/Container";
+
+import Standard from "./Standard";
+import Centered from "./Centered";
 
 import { Props } from "./types";
-import useStyles from "./style";
 
-const Background: FC<Props> = ({ children, variation = "light" }) => {
-  const classes = useStyles();
-
-  const override: string =
-    variation === "light" ? classes.rootLight : classes.rootDark;
-
+const Background: FC<Props> = ({
+  children,
+  variation = "light",
+  type = "standard",
+}) => {
   return (
-    <Container classes={{ root: `${classes.root} ${override}` }} maxWidth="sm">
-      <>{children}</>
-    </Container>
+    <>
+      {type === "standard" ? (
+        <Standard children={children} variation={variation} />
+      ) : (
+        <Centered children={children} variation={variation} />
+      )}
+    </>
   );
 };
 
