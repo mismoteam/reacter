@@ -20,15 +20,6 @@ const Dashboard = () => {
   const { isInProgress } = useRecoilValue(loadingAtom);
   const [, setLoadingAtomState] = useRecoilState<StateLoading>(loadingAtom);
 
-  console.log("=====> loading ", loading);
-  console.log("=====> error ", error);
-  console.log("=====> data ", _get(data, "getCityByName.weather", []));
-  console.log(
-    "=====> data.getCityByName.weather ",
-    _get(data, "getCityByName.weather", [])
-  );
-  console.log("\n");
-
   useEffect(() => {
     if (!data && loading && !isInProgress) {
       setLoadingAtomState({ isInProgress: true });
@@ -36,18 +27,18 @@ const Dashboard = () => {
       setLoadingAtomState({ isInProgress: false });
     } else if (data && !loading && !isInProgress) {
       setLoadingAtomState({ isInProgress: false });
-      console.log("HERE");
     }
   }, [data, isInProgress, loading, setLoadingAtomState]);
 
   if (error) return `Error! ${error.message}`;
 
   return (
-    <Background variation={"light"}>
-      <Grid container direction="column" alignContent="center" spacing={3}>
+    <Background variation={"dark"}>
+      <Grid container direction="column" spacing={3}>
         <Grid item xs={12}>
           <Typography
             variant="h5"
+            color="secondary"
             display="block"
             align="center"
             component="h2"
@@ -98,7 +89,12 @@ const Dashboard = () => {
               </Card>
             </Grid>
             <Grid item xs={12}>
-              <Typography variant="caption" display="block" align="center">
+              <Typography
+                variant="caption"
+                color="secondary"
+                display="block"
+                align="center"
+              >
                 Happy Hacking!!!
               </Typography>
             </Grid>

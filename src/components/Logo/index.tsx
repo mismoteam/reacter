@@ -1,6 +1,6 @@
 import React, { FC, memo } from "react";
 
-import logo from "../../assets/img/logo-light.png";
+import logo from "assets/img/logo-light.png";
 
 import { Props } from "./types";
 import useStyles from "./style";

@@ -23,18 +23,16 @@ const Login = () => {
   const classes = useStyles();
   const history = useHistory();
   const [, setUserAtomState] = useRecoilState<StateUser>(userAtom);
+  const [, setLoadingAtomState] = useRecoilState<StateLoading>(loadingAtom);
   const { isInProgress } = useRecoilValue(loadingAtom);
 
-  const [, setLoadingAtomState] = useRecoilState<StateLoading>(loadingAtom);
-
   const [formLoginError, setFormLoginError] = useState("");
-  // const [formLoginIsSubmitting, setFormLoginIsSubmitting] = useState(false);
 
   const { control, errors, handleSubmit } = useForm<FormLoginInputs>({
     resolver: yupResolver(loginFormSchema),
   });
 
-  const onLoginFormSubmit = (data: any) => {
+  const onLoginFormSubmit = (data: FormLoginInputs) => {
     setFormLoginError("");
     setLoadingAtomState({ isInProgress: true });
 
@@ -83,24 +81,26 @@ const Login = () => {
                   onSubmit={handleSubmit(onLoginFormSubmit)}
                 >
                   <FormInput
+                    variant="outlined"
+                    color="secondary"
                     type="text"
+                    defaultValue="admin@example.com"
                     name="email"
                     label="Email"
                     placeholder="email"
-                    variant="outlined"
-                    defaultValue="admin@example.com"
                     control={control}
                     errors={errors}
                     disabled={isInProgress}
                     fullWidth
                   />
                   <FormInput
+                    variant="outlined"
+                    color="secondary"
                     type="password"
+                    defaultValue="admin"
                     name="password"
                     label="Password"
                     placeholder="password"
-                    variant="outlined"
-                    defaultValue="admin"
                     control={control}
                     errors={errors}
                     disabled={isInProgress}
@@ -109,8 +109,8 @@ const Login = () => {
                   <FormButton
                     variant="contained"
                     color="primary"
-                    value="Login"
                     type="submit"
+                    value="Login"
                     isSubmitting={isInProgress}
                     disabled={isInProgress}
                     fullWidth

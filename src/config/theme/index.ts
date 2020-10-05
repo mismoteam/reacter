@@ -1,11 +1,25 @@
-import { ThemeOptions, createMuiTheme } from "@material-ui/core/styles";
+// @ts-nocheck
+
+import { createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
-  custom: {
-    zIndex: {
-      loading: 3,
+  palette: {
+    type: "light",
+    primary: {
+      main: "#000",
+    },
+    secondary: {
+      main: "#fff",
     },
   },
-} as ThemeOptions);
+  zIndex: {
+    loading: 1600,
+  },
+});
+
+if (process.env.NODE_ENV === "development") {
+  console.log("theme", theme);
+  console.log("\n");
+}
 
 export default theme;

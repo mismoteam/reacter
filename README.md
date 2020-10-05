@@ -14,6 +14,8 @@ Use Reacter to easily kick off and architecture your Cloud-Powered React Apps.
 
 - https://recoiljs.org
 
+- https://github.com/polemius/recoil-persist
+
 **React Hook Form** (an easy-to-use Yup validation with Material-UI form fields integration).
 
 - https://react-hook-form.com

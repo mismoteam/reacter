@@ -1,8 +1,10 @@
+// @ts-nocheck
+
 import { makeStyles } from "@material-ui/core/styles";
 
 const Style = makeStyles((theme) => ({
   root: {
-    zIndex: 5,
+    zIndex: theme.zIndex.loading,
     position: "absolute",
     background: "rgba(255,255,255,0.8)",
     flex: 1,
