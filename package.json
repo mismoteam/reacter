@@ -14,10 +14,11 @@
     "@material-ui/styles": "^4.10.0",
     "graphql": "^15.3.0",
     "lodash.get": "^4.4.2",
+    "nuka-carousel": "^4.7.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hook-form": "^6.8.5",
-    "react-material-ui-carousel": "^2.0.0",
+    "react-material-ui-carousel": "^2.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.3",
     "recoil": "0.0.13",
@@ -29,8 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "gen:graphql": "gql-gen --config codegen.yml"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,11 +48,6 @@
     ]
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^1.17.10",
-    "@graphql-codegen/fragment-matcher": "^1.17.8",
-    "@graphql-codegen/typescript": "^1.17.10",
-    "@graphql-codegen/typescript-operations": "^1.17.8",
-    "@graphql-codegen/typescript-react-apollo": "^2.0.7",
     "@types/graphql": "^14.5.0",
     "@types/history": "^4.7.8",
     "@types/lodash.get": "^4.4.6",

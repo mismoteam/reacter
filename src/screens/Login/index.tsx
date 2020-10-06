@@ -106,15 +106,17 @@ const Login = () => {
                     disabled={isInProgress}
                     fullWidth
                   />
-                  <FormButton
-                    variant="contained"
-                    color="primary"
-                    type="submit"
-                    value="Login"
-                    isSubmitting={isInProgress}
-                    disabled={isInProgress}
-                    fullWidth
-                  />
+                  <Box justifyContent="center" paddingTop={3} width={1}>
+                    <FormButton
+                      variant="contained"
+                      color="primary"
+                      type="submit"
+                      value="Login"
+                      isSubmitting={isInProgress}
+                      disabled={isInProgress}
+                      fullWidth
+                    />
+                  </Box>
                 </form>
               </Box>
             </Grid>

@@ -10,19 +10,33 @@ Use Reacter to easily kick off and architecture your Cloud-Powered React Apps.
 
 - https://material-ui.com
 
+![Reacter](./src/assets/img/logo-mui.png "Material UI")
+
 **Recoil** (persist and share the App state with rehydration included).
 
 - https://recoiljs.org
 
 - https://github.com/polemius/recoil-persist
 
+![Reacter](./src/assets/img/logo-recoil.png "Recoil")
+
+**Apollo Graph** (custom client).
+
+- https://www.apollographql.com/docs/react/
+
+![Reacter](./src/assets/img/logo-apollo.png "Material UI")
+
 **React Hook Form** (an easy-to-use Yup validation with Material-UI form fields integration).
 
 - https://react-hook-form.com
 
+![Reacter](./src/assets/img/logo-react-hook-form.png "React Router")
+
 **React Router** (enjoy setting up your route components strategy).
 
 - https://reactrouter.com
+
+![Reacter](./src/assets/img/logo-react-router.png "React Router")
 
 **A mocked JWT authentication response** (\_backend communication).
 
@@ -53,18 +67,6 @@ admin
 - Ask for feedback.
 
 - Add a Recoil logger or debugger tool.
-
-- Add Initial App Theme.
-
-- Create 2 Dashboard Screens with a simple:
-
-  - Restful API request (SWR).
-
-  - GraphQL API request (Apollo Client).
-
-    - Subscriptions example (optional).
-
-- Implement Lazy Load - Suspense intregration for every Dashboard Screen.
 
 - Go for the TDD approach using RTL + Jest ;)
 

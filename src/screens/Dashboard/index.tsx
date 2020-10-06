@@ -18,7 +18,7 @@ import logoReactHookForm from "assets/img/logo-react-hook-form.png";
 
 import GQL_GET_CITY_BY_NAME from "graphql/queries/GQL_GET_CITY_BY_NAME";
 
-import { Background } from "components";
+import { Background, Logo } from "components";
 
 import StateLoading from "state/loading/types";
 import { loadingAtom, userAtom } from "state";
@@ -87,16 +87,9 @@ const Dashboard = () => {
     <Background variation={"dark"} type="standard">
       <Grid container spacing={3}>
         <Grid item xs={12}>
-          <Typography
-            variant="h5"
-            color="secondary"
-            display="block"
-            align="center"
-            component="h2"
-            gutterBottom
-          >
-            {`Loading: ${isInProgress}`}
-          </Typography>
+          <Box display="flex" justifyContent="center">
+            <Logo variation={"dark"} />
+          </Box>
         </Grid>
         <Grid item xs={12}>
           <Card>
@@ -152,7 +145,7 @@ const Dashboard = () => {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Carousel autoPlay={true} animation="fade" indicators={true}>
+          <Carousel autoPlay={true} animation="slide" indicators={true}>
             {items.map((item, i) => (
               <Box display="flex" justifyContent="center" key={i}>
                 <img
