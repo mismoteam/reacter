@@ -6,7 +6,7 @@ const Style = makeStyles((theme) => ({
   },
   imgLogo: {
     align: "center",
-    border: "2px solid #000",
+    border: "2px solid #fff",
     borderRadius: theme.shape.borderRadius * 2,
   },
 }));

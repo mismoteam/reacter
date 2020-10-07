@@ -2,62 +2,53 @@
 
 import { createMuiTheme } from "@material-ui/core/styles";
 
+export const customTheme = {
+  primary: "#00b6c5",
+  primaryHover: "#00cad8",
+  secondary: "#3f51b5",
+  typographyFontColor: "#000",
+  commonWhite: "#fff",
+};
+
 const theme = createMuiTheme({
   palette: {
     type: "light",
     primary: {
-      main: "#00b6c5",
+      main: customTheme.primary,
     },
     secondary: {
-      main: "#3f51b5",
+      main: customTheme.secondary,
     },
   },
   zIndex: {
     loading: 1600,
   },
+  overrides: {
+    MuiButton: {
+      root: {
+        borderRadius: 3,
+      },
+      containedPrimary: {
+        backgroundColor: customTheme.primary,
+        color: customTheme.commonWhite,
+        textTransform: "uppercase",
+        fontWeight: "normal",
+        padding: "12px 18px",
+        textShadow: "none",
+        fontSize: 24,
+        lineHeight: "1.5em",
+        "&:hover": {
+          backgroundColor: customTheme.primaryHover,
+        },
+      },
+    },
+    MuiTypography: {
+      root: {
+        color: customTheme.typographyFontColor,
+      },
+    },
+  },
 });
-
-theme.overrides = {
-  MuiButton: {
-    root: {
-      borderRadius: theme.shape.borderRadius,
-    },
-
-    containedPrimary: {
-      backgroundColor: theme.palette.primary.main,
-      color: theme.palette.common.white,
-      textTransform: "uppercase",
-      fontWeight: "normal",
-      padding: "12px 18px",
-      textShadow: "none",
-      fontSize: 24,
-      lineHeight: "1.5em",
-      "&:hover": {
-        backgroundColor: "#00cad8",
-      },
-    },
-  },
-  MuiTypography: {
-    root: {
-      color: theme.palette.common.dark,
-      "& h1": {
-        color: theme.palette.primary.main,
-      },
-      "& h2": {
-        color: theme.palette.primary.main,
-      },
-      "& h3": {
-        color: theme.palette.primary.main,
-      },
-      "& h4": {
-        color: theme.palette.primary.main,
-      },
-      "& h5": {
-        color: theme.palette.primary.main,
-      },
-    },
-  },
-};
 
 if (process.env.NODE_ENV === "development") {
   console.log("theme", theme);

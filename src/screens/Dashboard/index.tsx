@@ -9,6 +9,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { useQuery } from "@apollo/client";
 import _get from "lodash.get";
 
+// Carousel logos.
 import logoReact from "assets/img/logo-react.png";
 import logoMui from "assets/img/logo-mui.png";
 import logoRecoil from "assets/img/logo-recoil.png";
@@ -17,10 +18,9 @@ import logoReactRouter from "assets/img/logo-react-router.png";
 import logoReactHookForm from "assets/img/logo-react-hook-form.png";
 
 import GQL_GET_CITY_BY_NAME from "graphql/queries/GQL_GET_CITY_BY_NAME";
-
-import { Background, Logo } from "components";
-
 import StateLoading from "state/loading/types";
+
+import { Background, Toolbar } from "components";
 import { loadingAtom, userAtom } from "state";
 
 import useStyles from "./style";
@@ -84,17 +84,13 @@ const Dashboard = () => {
   ];
 
   return (
-    <Background variation={"dark"} type="standard">
+    <Background variation={"light"} type="standard" isDashBoard={true}>
+      <Toolbar />
       <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Box display="flex" justifyContent="center">
-            <Logo variation={"dark"} />
-          </Box>
-        </Grid>
         <Grid item xs={12}>
           <Card>
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
+              <Typography gutterBottom variant="h5" color="primary">
                 Recoil State
               </Typography>
               <Typography
@@ -114,7 +110,7 @@ const Dashboard = () => {
             <Grid item xs={12}>
               <Card>
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant="h5" color="primary">
                     GraphQL Response
                   </Typography>
                   <Typography

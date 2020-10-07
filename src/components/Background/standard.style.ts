@@ -14,6 +14,9 @@ const Style = makeStyles((theme) => ({
     padding: 0,
     height: "100vh",
   },
+  subRootDashboard: {
+    paddingTop: theme.spacing(8),
+  },
   rootDark: {
     background: theme.palette.common.black,
   },

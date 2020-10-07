@@ -4,12 +4,17 @@ import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { Props } from "./types";
+import useStyles from "./style";
 
 const FormButton: FC<Props> = ({ value, isSubmitting = false, ...props }) => {
+  const classes = useStyles();
+
   return (
     <Box>
       <Button {...props}>
-        {isSubmitting && <CircularProgress />}
+        {isSubmitting && (
+          <CircularProgress className={classes.circularProgress} />
+        )}
         {value}
       </Button>
     </Box>

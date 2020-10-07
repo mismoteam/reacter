@@ -13,6 +13,9 @@ const Style = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
   },
+  rootDashboard: {
+    paddingTop: theme.spacing(8),
+  },
   rootDark: {
     background: theme.palette.common.black,
   },

@@ -3,7 +3,8 @@ import AppBar from "@material-ui/core/AppBar";
 import { default as AppToolbar } from "@material-ui/core/Toolbar";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+
+import { Logo } from "components";
 
 import useStyles from "./style";
 
@@ -12,14 +13,12 @@ const Toolbar = () => {
 
   return (
     <header>
-      <AppBar>
+      <AppBar className={classes.appBar}>
         <AppToolbar>
           <Grid container>
             <Grid item xs={12}>
               <Link className={classes.link} to={"/"}>
-                <Typography className={classes.title} variant="h6">
-                  Reacter
-                </Typography>
+                <Logo variation={"light"} size="small" />
               </Link>
             </Grid>
           </Grid>
