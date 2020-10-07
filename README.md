@@ -101,6 +101,8 @@ firebase use --unalias default
 - https://firebase.google.com/docs/cli#partial_deploys
 
 ```
+npm run build
+
 firebase deploy --only hosting -m 'Initial hosting deploy'
 ```
 
