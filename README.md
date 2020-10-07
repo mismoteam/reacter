@@ -62,6 +62,48 @@ admin@example.com
 admin
 ```
 
+## Firebase Hosting
+
+- https://firebase.google.com/docs/cli
+
+### Install the Firebase CLI tool
+
+```
+brew install firebase-cli
+```
+
+### Initialize a Firebase project
+
+- https://create-react-app.dev/docs/deployment/#firebase
+
+- https://firebase.google.com/docs/cli#initialize_a_firebase_project
+
+- https://firebase.google.com/docs/cli#add_alias
+
+### code .firebaserc
+
+```
+{
+  "projects": {
+    "development": "reacter-starter"
+  }
+}
+```
+
+### Remove default alias
+
+```
+firebase use --unalias default
+```
+
+### Deploy your App to the hosting Firebase service
+
+- https://firebase.google.com/docs/cli#partial_deploys
+
+```
+firebase deploy --only hosting -m 'Initial hosting deploy'
+```
+
 ## TODO ❤️
 
 - Ask for feedback.
